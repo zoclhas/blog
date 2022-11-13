@@ -210,3 +210,14 @@ header .home {
         padding-bottom: 0.5rem;
     }
 }
+
+pre {
+    background: var(--bg1);
+
+    border: var(--border-main);
+    border-radius: var(--radius);
+}
+
+pre code {
+    background: none;
+}
