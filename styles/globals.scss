@@ -1,3 +1,276 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.light-theme {
+    --background: #ffeacb;
+    --bg1: #fff4e4;
+    --foreground: #0f0f0f;
+    --hover: #121212;
+}
+
+.dark-theme {
+    --background: #0f0f0f;
+    --bg1: #181818;
+    --foreground: #ffeacb;
+    --hover: #fff4e4;
+}
+
+:root {
+    --radius: 14px;
+    --b-width: 2px;
+    --border-main: var(--foreground) var(--b-width) solid;
+    --shadow-main: 2px 2px var(--foreground);
+    --transition-main: 150ms ease-in-out;
+}
+
+@font-face {
+    font-family: Verela;
+    src: url(../fonts/VarelaRound-Regular.ttf);
+}
+
+::selection {
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: 9px;
+    scrollbar-color: var(--bg1) var(--background);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--bg1);
+    border-radius: 14px;
+    border: 2px solid var(--foreground);
+    transition: all 250ms ease-in-out;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--background);
+    box-shadow: var(--shadow-main);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    margin: 0;
+
+    font-family: Verela;
+
+    transition: var(--transition-main);
+}
+
+.prose :where(h1, h2, h3, h4, h5, h6):not(:where([class~="not-prose"] *)) {
+    color: var(--foreground);
+}
+
+.prose {
+    color: var(--foreground);
+    background: var(--bg1);
+
+    padding: 1rem;
+
+    border: var(--border-main);
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    transition: var(--transition-main);
+}
+
+.prose p:has(img) {
+    color: var(--foreground);
+    background: none;
+
+    border: none;
+
+    overflow: hidden;
+
+    transition: var(--transition-main);
+
+    display: flex;
+    justify-content: center;
+}
+
+.porse p img {
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.prose :where(pre):not(:where([class~="not-prose"] *)) {
+    color: var(--background);
+    background: var(--foreground);
+
+    border: var(--background) var(--b-width) solid;
+    border-radius: var(--radius);
+}
+#theme-wrapper {
+    z-index: 99;
+
+    background: var(--bg1);
+    width: 4rem;
+    height: 4rem;
+    position: fixed;
+    bottom: 0;
+    margin: 0.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: var(--border-main);
+    border-radius: var(--radius);
+
+    transition: all var(--transition-main);
+}
+
+#theme-wrapper:hover {
+    box-shadow: var(--shadow-main);
+}
+
+#theme-switch {
+    display: none;
+}
+
+#theme-switch + label {
+    cursor: pointer;
+}
+
+#theme-wrapper[data-theme="light"] #theme-moon {
+    display: none;
+}
+
+#theme-wrapper[data-theme="dark"] #theme-sun {
+    display: none;
+}
+
+.zb-container {
+    min-height: 100vh;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-main {
+    max-width: 40rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    flex-grow: 1;
+}
+
+header {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.card {
+    background: var(--bg1);
+    color: var(--foreground);
+
+    border: var(--border-main);
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    transition: var(--transition-main);
+}
+
+.card-shadow {
+    cursor: pointer;
+    transition: box-shadow var(--transition-main);
+}
+
+.card-shadow:hover {
+    box-shadow: var(--shadow-main);
+}
+
+.card-header {
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    align-items: center;
+}
+
+.card .card-body {
+    padding: 1rem;
+}
+
+header .home {
+    max-width: 4rem;
+    height: 4rem;
+}
+
+header {
+    margin-bottom: 0.5rem;
+    display: flex;
+}
+
+header .card {
+    flex-grow: 1;
+}
+
+.home-posts {
+    padding-bottom: 0.5rem;
+}
+
+.home-posts:nth-child(odd) {
+    padding-right: 0.25rem;
+}
+
+.home-posts:nth-child(even) {
+    padding-left: 0.25rem;
+}
+
+@media (max-width: 959px) {
+    .home-posts:nth-child(odd) {
+        padding-right: 0;
+    }
+
+    .home-posts:nth-child(even) {
+        padding-left: 0;
+    }
+}
+
+.prose p :where(code):not(:where([class~="not-prose"] *)) {
+    color: var(--background);
+    background: var(--foreground);
+
+    border: var(--background) var(--b-width) solid;
+    border-radius: 4px;
+}
+
+.wrapper-main {
+    width: clamp(10%, 20%, 10%);
+}
