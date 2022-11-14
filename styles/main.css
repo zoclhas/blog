@@ -210,6 +210,10 @@ header .home {
     padding-left: 0.25rem;
 }
 
+.home-posts .nextui-grid-item {
+    padding-bottom: 0.5rem;
+}
+
 @media (max-width: 959px) {
     .home-posts .nextui-grid-item:nth-child(odd) {
         padding-right: 0;
@@ -217,10 +221,6 @@ header .home {
 
     .home-posts .nextui-grid-item:nth-child(even) {
         padding-left: 0;
-    }
-
-    .home-posts .nextui-grid-item {
-        padding-bottom: 0.5rem;
     }
 }
 .wrapper-main {

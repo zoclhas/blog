@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { Card, Text } from "@nextui-org/react";
+import { useRouter } from "next/router";
 
 import ThemeSwitch from "./ThemeSwitch";
 
