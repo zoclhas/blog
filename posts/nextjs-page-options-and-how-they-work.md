@@ -1,11 +1,11 @@
 ---
-title: "Next.js page options and how they work"
-metaTitle: "Next.js page options and how they work"
-metaDesc: "How to use pages in Next.js exploring the options"
+title: 'Next.js page options and how they work'
+metaTitle: 'Next.js page options and how they work'
+metaDesc: 'How to use pages in Next.js exploring the options'
 socialImage: images/22-09-2021.jpg
-date: "2021-09-22"
+date: '2021-09-22'
 tags:
-    - nextjs
+  - nextjs
 ---
 
 Creating pages is an integral part of any framework. Today we'll be looking at three different types of pages that we can leverage in Next.js.
@@ -26,33 +26,35 @@ Let's create a simple static contact page for our [Next.js tailwind starter](htt
 Create a file called `contact.js` in your `pages` folder.
 
 ```js
-import Head from "next/head";
+import Head from 'next/head';
 
 export default function Contact() {
-    return (
-        <div className="flex items-center justify-center min-h-screen">
-            <Head>
-                <title>Contact page</title>
-                <meta name="description" content="Contact us" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+  return (
+    <div className='flex items-center justify-center min-h-screen'>
+      <Head>
+        <title>Contact page</title>
+        <meta name='description' content='Contact us' />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
 
-            <div className="max-w-xs my-2 overflow-hidden rounded shadow-lg">
-                <div className="px-6 py-4">
-                    <div className="mb-2 text-xl font-bold">Contact us</div>
-                    <p className="text-base text-grey-darker">
-                        This will be the place to contact us later on.
-                    </p>
-                </div>
-            </div>
+      <div className='max-w-xs my-2 overflow-hidden rounded shadow-lg'>
+        <div className='px-6 py-4'>
+          <div className='mb-2 text-xl font-bold'>Contact us</div>
+          <p className='text-base text-grey-darker'>
+            This will be the place to contact us later on.
+          </p>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 ```
 
 And now if we run our script again `npm run dev` we can visit `http://localhost:3000/contact`.
 
 This should now show the page we just created.
+
+![Contact page in Next.js](https://cdn.hashnode.com/res/hashnode/image/upload/v1631702332167/H9HkNDp6F.png)
 
 ## Creating dynamic based pages
 
@@ -97,7 +99,7 @@ These props are passed to our primary function (Shows).
 So let's see how we can fetch data inside the `getStaticProps` function.
 
 ```js
-const res = await fetch("https://api.jikan.moe/v3/top/anime/1");
+const res = await fetch('https://api.jikan.moe/v3/top/anime/1');
 const shows = await res.json();
 ```
 
@@ -108,33 +110,31 @@ Then as for our HTML, we can now use this `shows` object since we passed it to o
 
 ```js
 function Shows({ shows }) {
-    return (
-        <div className="grid min-h-screen grid-cols-5 gap-4 p-5">
-            {shows.top.map((show) => (
-                <div
-                    key={show.id}
-                    className="max-w-xs my-2 overflow-hidden rounded shadow-lg "
-                >
-                    <img
-                        className="flex-1 object-cover w-full h-80"
-                        src={show.image_url}
-                        alt={show.title}
-                    />
-                    <div className="px-6 py-4">
-                        <div className="mb-2 text-xl font-bold">
-                            {show.title}
-                        </div>
-                    </div>
-                </div>
-            ))}
+  return (
+    <div className='grid min-h-screen grid-cols-5 gap-4 p-5'>
+      {shows.top.map((show) => (
+        <div
+          key={show.id}
+          className='max-w-xs my-2 overflow-hidden rounded shadow-lg '
+        >
+          <img
+            className='flex-1 object-cover w-full h-80'
+            src={show.image_url}
+            alt={show.title}
+          />
+          <div className='px-6 py-4'>
+            <div className='mb-2 text-xl font-bold'>{show.title}</div>
+          </div>
         </div>
-    );
+      ))}
+    </div>
+  );
 }
 ```
 
 We create a simple render of each show's own card, with an image and title of the anime show.
 
-
+![Top anime show in Next.js](https://cdn.hashnode.com/res/hashnode/image/upload/v1631712831922/I1Yb9K2DQ.png)
 
 ## Creating dynamic page paths
 
@@ -154,25 +154,25 @@ Let's put this together.
 
 ```js
 function Show(show) {
-    return <h1>{show.title}</h1>;
+  return <h1>{show.title}</h1>;
 }
 
 export async function getStaticPaths() {
-    const res = await fetch("https://api.jikan.moe/v3/top/anime/1");
-    const shows = await res.json();
-    const paths = shows.top.map((show) => {
-        return {
-            params: { id: show.mal_id.toString() },
-        };
-    });
+  const res = await fetch('https://api.jikan.moe/v3/top/anime/1');
+  const shows = await res.json();
+  const paths = shows.top.map((show) => {
+    return {
+      params: { id: show.mal_id.toString() },
+    };
+  });
 
-    return { paths, fallback: false };
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-    const res = await fetch(`https://api.jikan.moe/v3/anime/${params.id}`);
-    const show = await res.json();
-    return { props: show };
+  const res = await fetch(`https://api.jikan.moe/v3/anime/${params.id}`);
+  const show = await res.json();
+  return { props: show };
 }
 
 export default Show;
@@ -188,7 +188,7 @@ Then we use the `getStaticProps` function to retrieve these IDs from the URL and
 
 It results in a single page for each show.
 
-
+![Single page in Next.js](https://cdn.hashnode.com/res/hashnode/image/upload/v1631715374299/92TyD_WIe.png)
 
 And that's it. We now have explored these three ways of creating pages in Next.js.
 I hope you found this helpful article. You can also find the complete code on [GitHub](https://github.com/rebelchris/next-tailwind/tree/pages).

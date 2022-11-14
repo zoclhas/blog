@@ -1,6 +1,4 @@
-import { createTheme, NextUIProvider } from "@nextui-org/react";
-import { ThemeProvider as NextThemesProvider } from "next-themes";
-import Layout from '../components/Layout'
+import Layout from "../components/Layout";
 
 import "../styles/main.css";
 

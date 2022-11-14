@@ -2,8 +2,6 @@ import fs from "fs";
 import matter from "gray-matter";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { Grid, Card } from "@nextui-org/react";
 
 export async function getStaticProps() {
     const files = fs.readdirSync("posts");
