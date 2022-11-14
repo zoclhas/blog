@@ -2,7 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import md from "markdown-it";
 
-import { Head } from "next/head";
+import Head from "next/head";
 
 export async function getStaticPaths() {
     const files = fs.readdirSync("posts");
@@ -31,7 +31,28 @@ export async function getStaticProps({ params: { slug } }) {
 export default function PostPage({ frontmatter, content }) {
     return (
         <div>
-            {/* <Head><title>{frontmatter.title}</title></Head> */}
+            <Head>
+                <title>Zoclhas | Blog • {frontmatter.title}</title>
+                <meta
+                    property="og:title"
+                    content={`Zoclhas | Bio ${frontmatter.title}`}
+                />
+                <meta
+                    property="og:url"
+                    content={`https://blog.zochy.xyz/${frontmatter.url}`}
+                />
+                <meta
+                    property="og:description"
+                    content={frontmatter.metaDesc}
+                />
+                <meta
+                    property="og:image"
+                    content={`https://blog.zochy.xyz/${frontmatter.socialImage}`}
+                />
+                <meta name="description" content={frontmatter.metaDesc} />
+                <meta name="theme-color" content="#ffeacb" />
+                <meta name="twitter:card" content="summary_large_image" />
+            </Head>
             <article className="prose prose-img:rounded-xl">
                 <h1>{frontmatter.title}</h1>
                 <div
