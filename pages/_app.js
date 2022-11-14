@@ -2,8 +2,6 @@ import { createTheme, NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import Layout from '../components/Layout'
 
-import ThemeSwitch from "../components/ThemeSwitch";
-
 import "../styles/main.css";
 
 const lightTheme = createTheme({
@@ -30,7 +28,6 @@ function MyApp({ Component, pageProps }) {
 				<Layout>
 					<Component {...pageProps} />
 				</Layout>
-				<ThemeSwitch />
 			</NextUIProvider>
 		</NextThemesProvider>
 	);

@@ -32,9 +32,11 @@ export default function PostPage({ frontmatter, content }) {
     return (
         <div>
             {/* <Head><title>{frontmatter.title}</title></Head> */}
-            <article className='prose'>
+            <article className="prose prose-img:rounded-xl">
                 <h1>{frontmatter.title}</h1>
-                <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
+                <div
+                    dangerouslySetInnerHTML={{ __html: md().render(content) }}
+                />
             </article>
         </div>
     );

@@ -88,9 +88,6 @@ body {
     background: var(--bg1);
     width: 4rem;
     height: 4rem;
-    position: fixed;
-    bottom: 0;
-    margin: 0.5rem;
 
     display: flex;
     justify-content: center;
@@ -143,6 +140,20 @@ body {
 header {
     display: flex;
     gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+header .header-title {
+    flex-grow: 1;
+}
+
+header .header-btn {
+    min-width: 4rem;
+    max-width: 4rem;
+}
+
+#theme-wrapper .nextui-c-jxECYO {
+    justify-content: center;
 }
 
 .nextui-c-BDLTQ {
@@ -209,4 +220,65 @@ header .home {
     .home-posts .nextui-grid-item {
         padding-bottom: 0.5rem;
     }
+}
+.wrapper-main {
+    width: clamp(10%, 20%, 10%);
+}
+
+.prose :where(h1, h2, h3, h4, h5, h6):not(:where([class~="not-prose"] *)) {
+    color: var(--foreground);
+    border-bottom: var(--border-main);
+}
+
+.prose {
+    color: var(--foreground);
+    background: var(--bg1);
+
+    padding: 1rem;
+
+    border: var(--border-main);
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    transition: var(--transition-main);
+}
+
+.prose p:has(img) {
+    color: var(--foreground);
+    background: none;
+
+    border: none;
+
+    overflow: hidden;
+
+    transition: var(--transition-main);
+
+    display: flex;
+    justify-content: center;
+}
+
+.prose-img\:rounded-xl :is(:where(img):not(:where([class~="not-prose"] *))) {
+    border-radius: var(--radius) !important;
+    margin: 0 auto;
+}
+
+.prose :where(pre):not(:where([class~="not-prose"] *)) {
+    color: var(--background);
+    background: var(--foreground);
+
+    border: var(--background) var(--b-width) solid;
+    border-radius: var(--radius);
+}
+
+.prose :where(ul > li):not(:where([class~="not-prose"] *))::marker {
+    color: var(--foreground);
+}
+
+.prose p :where(code):not(:where([class~="not-prose"] *)) {
+    color: var(--background);
+    background: var(--foreground);
+
+    border: var(--background) var(--b-width) solid;
+    border-radius: 4px;
 }

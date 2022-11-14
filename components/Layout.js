@@ -1,6 +1,8 @@
 import { Card, Text } from "@nextui-org/react";
 import { useRouter } from "next/router";
 
+import ThemeSwitch from "./ThemeSwitch";
+
 export default function Layout({ children }) {
     const router = useRouter();
 
@@ -14,16 +16,42 @@ export default function Layout({ children }) {
             <div className="wrapper-main">
                 {router.pathname === "/" ? (
                     <header>
-                        <Card>
+                        <Card className="header-title">
                             <Card.Header>
                                 <Text h3>Latest Posts</Text>
+                            </Card.Header>{" "}
+                        </Card>
+                        <ThemeSwitch />
+                        <Card
+                            as="a"
+                            className="card-shadow header-btn"
+                            href="https://zochy.xyz"
+                        >
+                            <Card.Header>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="35"
+                                    height="35"
+                                    fill="var(--foreground)"
+                                    viewBox="0 0 35 35"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M2.507 10.618a1.094 1.094 0 0 1 0-1.549l8.75-8.75a1.094 1.094 0 1 1 1.549 1.549L5.922 8.75h21.422a5.469 5.469 0 0 1 5.469 5.469v17.5a1.094 1.094 0 0 1-2.188 0v-17.5a3.281 3.281 0 0 0-3.281-3.281H5.922l6.884 6.882a1.094 1.094 0 1 1-1.549 1.549l-8.75-8.75z"
+                                    />
+                                </svg>
                             </Card.Header>
                         </Card>
                     </header>
                 ) : (
                     <header
-                        style={{ justifyContent: "flex-end", position: "sticky", top: "1rem" }}
+                        style={{
+                            justifyContent: "flex-end",
+                            position: "sticky",
+                            top: "1rem",
+                        }}
                     >
+                        <ThemeSwitch />
                         <Card
                             isPressable
                             className="home card-shadow"
