@@ -297,6 +297,7 @@ code::selection {
 
 .prose p {
     line-height: 1.45rem;
+    font-family: Verela;
 }
 
 .prose li {
