@@ -40,10 +40,7 @@ export default function PostPage({ frontmatter, content }) {
         <div>
             <Head>
                 <title>Zoclhas | Blog • {frontmatter.title}</title>
-                <meta
-                    property="og:title"
-                    content={`Zoclhas | Bio ${frontmatter.title}`}
-                />
+                <meta property="og:title" content={`${frontmatter.title}`} />
                 <meta
                     property="og:url"
                     content={`https://blog.zochy.xyz/${frontmatter.url}`}
