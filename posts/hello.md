@@ -33,4 +33,13 @@ There are quite a few things I like:
 (Gosh- There's prolly more but, I don't have enough braincells to thing think haha. I'm surprised I like this much stuff.)
 
 \
-Currently, I am doing web dev and creating materials for Minecraft and in general too. I also run a thing called [Zaura](https://zaura.net)- A site where I showcase the texturepacks I've created for Minecraft.
+Currently, I am doing web dev and creating materials for Minecraft and in general too. I also run a thing called [Zaura](https://zaura.net)- A site where I showcase the texturepacks I've created for Minecraft. Then there is obviously my own portfolio site- [zoclhas.com](https://zoclhas.com). (I may start a photography showcase site soon _smirks_). \
+There is then my beautiful (not really) ✨[GitHub](https://github.com/zoclhas)✨. You can find more links [here](https://zochy.xyz).
+
+&nbsp;
+
+### Closing words
+
+So I guess- that's all I've to say about me now. If you read this completely- THANK YOU!!! ^.^ \
+I will hopefully write more blogs, and maybe make this open source in the future. \
+Well.. have a great day 💜!
