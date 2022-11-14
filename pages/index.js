@@ -34,8 +34,8 @@ export default function Home({ posts }) {
                     <Card
                         as="a"
                         href={`/post/${slug}`}
-                        isPressable
                         className="card-shadow"
+                        isPressable
                     >
                         <Image
                             width={400}
