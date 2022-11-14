@@ -6,11 +6,6 @@ import ThemeSwitch from "./ThemeSwitch";
 export default function Layout({ children }) {
     const router = useRouter();
 
-    function goHome() {
-        console.log("*going home :))*");
-        router.push("/");
-    }
-
     return (
         <div className="container">
             <div className="wrapper-main">
@@ -53,9 +48,11 @@ export default function Layout({ children }) {
                     >
                         <ThemeSwitch />
                         <Card
-                            isPressable
                             className="home card-shadow"
-                            onClick={goHome}
+                            onClick={() => {
+                                router.push("/");
+                            }}
+                            isPressable
                         >
                             <Card.Header>
                                 <svg

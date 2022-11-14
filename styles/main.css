@@ -138,6 +138,8 @@ body {
 }
 
 header {
+    z-index: 99;
+
     display: flex;
     gap: 0.5rem;
     margin-bottom: 1rem;
@@ -281,4 +283,14 @@ header .home {
 
     border: var(--background) var(--b-width) solid;
     border-radius: 4px;
+}
+
+pre code {
+    color: var(--background);
+    background: none;
+}
+
+code::selection {
+    background-color: var(--background);
+    color: var(--foreground);
 }
