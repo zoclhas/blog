@@ -2,6 +2,7 @@ import { createTheme, NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import Layout from "../components/Layout";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 
 import "../styles/main.css";
 
@@ -31,6 +32,7 @@ function MyApp({ Component, pageProps }) {
                 </Head>
                 <Layout>
                     <Component {...pageProps} />
+                    <Analytics />
                 </Layout>
             </NextUIProvider>
         </NextThemesProvider>
