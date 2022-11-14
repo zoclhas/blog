@@ -1,6 +1,7 @@
 import { createTheme, NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import Layout from "../components/Layout";
+import Head from "next/head";
 
 import "../styles/main.css";
 
@@ -25,6 +26,9 @@ function MyApp({ Component, pageProps }) {
             }}
         >
             <NextUIProvider>
+                <Head>
+                    <title>Zoclhas | Blog</title>
+                </Head>
                 <Layout>
                     <Component {...pageProps} />
                 </Layout>

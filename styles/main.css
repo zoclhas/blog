@@ -68,7 +68,6 @@ h6 {
 }
 
 a {
-    text-decoration: none;
     color: inherit;
 }
 
@@ -230,6 +229,7 @@ header .home {
 .prose :where(h1, h2, h3, h4, h5, h6):not(:where([class~="not-prose"] *)) {
     color: var(--foreground);
     border-bottom: var(--border-main);
+    margin-bottom: 0.5rem;
 }
 
 .prose {
@@ -293,4 +293,26 @@ pre code {
 code::selection {
     background-color: var(--background);
     color: var(--foreground);
+}
+
+.prose p {
+    line-height: 1.45rem;
+}
+
+.prose li {
+    color: var(--foreground);
+    list-style-type: disc;
+    line-height: 1rem;
+}
+
+.prose a {
+    text-decoration: underline;
+    color: inherit;
+
+    transition: all var(--transition-main);
+}
+
+.prose a:hover {
+    text-decoration: none;
+    color: var(--hover);
 }
