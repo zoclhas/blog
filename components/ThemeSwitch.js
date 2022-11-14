@@ -15,7 +15,7 @@ export default function ThemeSwitch() {
         if (!currentTheme || currentTheme === "light") {
             themeWrapper.setAttribute("data-theme", "light");
         } else if (currentTheme === "dark") {
-            themeWrapper.setAttribute("data-theme", "dark");
+            themeWrapper.setAttribute("data-theme", "dark")
         }
     }
 
