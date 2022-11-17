@@ -19,7 +19,6 @@ export default function ThemeSwitch() {
             themeWrapper.setAttribute("data-theme", "dark");
         }
     }
-    console.log(type);
 
     return (
         <div>
@@ -27,7 +26,6 @@ export default function ThemeSwitch() {
                 <link
                     rel="icon"
                     href={type === "light" ? "/favicon-light.ico" : "/favicon-dark.ico"}
-                    className="light-fav"
                 />
             </Head>
             <Card

@@ -226,12 +226,24 @@ header .home {
         padding-left: 0;
     }
 }
+
+.home-posts .nextui-c-jxECYO {
+    height: 5.5rem;
+
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .wrapper-main {
     width: clamp(10%, 20%, 10%);
 }
 
 .prose :where(h1, h2, h3, h4, h5, h6):not(:where([class~="not-prose"] *)) {
     color: var(--foreground);
+    max-width: max-content;
     border-bottom: var(--border-main);
     margin-bottom: 0.5rem;
 }
@@ -329,4 +341,9 @@ code::selection {
     border: var(--border-main);
 
     font-family: var(--nextui-fonts-mono);
+}
+
+.prose .date {
+    max-width: 3ch;
+    border-bottom: var(--border-main);
 }

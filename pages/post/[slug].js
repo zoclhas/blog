@@ -2,19 +2,20 @@ import fs from "fs";
 import matter from "gray-matter";
 import Head from "next/head";
 
-const markdownItAttrs = require('markdown-it-attrs');
-const { html5Media } = require('markdown-it-html5-media');
-const md = () => require('markdown-it')()
-    .use(markdownItAttrs, {
-        leftDelimiter: '{',
-        rightDelimiter: '}',
-        allowedAttributes: []
-    })
-    .use(require('markdown-it-anchor').default)
-    .use(html5Media)
-    .use(require('markdown-it-sup'))
-    .use(require('markdown-it-sub'))
-    .use(require('markdown-it-kbd'))
+const markdownItAttrs = require("markdown-it-attrs");
+const { html5Media } = require("markdown-it-html5-media");
+const md = () =>
+    require("markdown-it")()
+        .use(markdownItAttrs, {
+            leftDelimiter: "{",
+            rightDelimiter: "}",
+            allowedAttributes: [],
+        })
+        .use(require("markdown-it-anchor").default)
+        .use(html5Media)
+        .use(require("markdown-it-sup"))
+        .use(require("markdown-it-sub"))
+        .use(require("markdown-it-kbd"));
 
 export async function getStaticPaths() {
     const files = fs.readdirSync("posts");
@@ -70,6 +71,7 @@ export default function PostPage({ frontmatter, content }) {
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <article className="prose prose-img:rounded-xl">
+                <p className="date">{frontmatter.date}</p>
                 <h1>{frontmatter.title}</h1>
                 <img src={`/${frontmatter.socialImage}`} />
                 <div
