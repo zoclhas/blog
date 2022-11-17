@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .light-theme {
     --background: #ffeacb;
     --bg1: #fff4e4;
@@ -316,4 +320,13 @@ code::selection {
 .prose a:hover {
     text-decoration: none;
     color: var(--hover);
+}
+
+.prose kbd {
+    color: var(--foreground);
+    background-color: var(--background);
+
+    border: var(--border-main);
+
+    font-family: var(--nextui-fonts-mono);
 }

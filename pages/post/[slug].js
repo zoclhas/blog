@@ -1,8 +1,20 @@
 import fs from "fs";
 import matter from "gray-matter";
-import md from "markdown-it";
-
 import Head from "next/head";
+
+const markdownItAttrs = require('markdown-it-attrs');
+const { html5Media } = require('markdown-it-html5-media');
+const md = () => require('markdown-it')()
+    .use(markdownItAttrs, {
+        leftDelimiter: '{',
+        rightDelimiter: '}',
+        allowedAttributes: []
+    })
+    .use(require('markdown-it-anchor').default)
+    .use(html5Media)
+    .use(require('markdown-it-sup'))
+    .use(require('markdown-it-sub'))
+    .use(require('markdown-it-kbd'))
 
 export async function getStaticPaths() {
     const files = fs.readdirSync("posts");
