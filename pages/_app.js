@@ -1,4 +1,4 @@
-import { createTheme, NextUIProvider } from "@nextui-org/react";
+import { createTheme, NextUIProvider, useTheme } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import Layout from "../components/Layout";
 import { Analytics } from "@vercel/analytics/react";
@@ -16,6 +16,7 @@ const darkTheme = createTheme({
 });
 
 function MyApp({ Component, pageProps }) {
+
     return (
         <NextThemesProvider
             defaultTheme="light"

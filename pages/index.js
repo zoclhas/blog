@@ -42,7 +42,7 @@ export default function Home({ posts }) {
 				/>
 				<meta
 					property="og:image"
-					content="https://blog.zochy.xyz/images/blog-1.png"
+					content="https://blog.zochy.xyz/images/meta.png"
 				/>
 				<meta name="description" content="A kinda update, blogging and other random stuff I want to share." />
 				<meta name="theme-color" content="#ffeacb" />
