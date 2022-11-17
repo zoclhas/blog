@@ -34,7 +34,7 @@ export default function Home({ posts }) {
 				<meta property="og:title" content="Zoclhas | Blog" />
 				<meta
 					property="og:url"
-					content={`https://blog.zochy.xyz/`}
+					content="https://blog.zochy.xyz/"
 				/>
 				<meta
 					property="og:description"
@@ -42,7 +42,7 @@ export default function Home({ posts }) {
 				/>
 				<meta
 					property="og:image"
-					content={`https://blog.zochy.xyz/images/blog-1.png}`}
+					content="https://blog.zochy.xyz/images/blog-1.png"
 				/>
 				<meta name="description" content="A kinda update, blogging and other random stuff I want to share." />
 				<meta name="theme-color" content="#ffeacb" />
@@ -52,8 +52,7 @@ export default function Home({ posts }) {
 				{posts.map(({ slug, frontmatter }) => (
 					<Grid sm={6} xs={12} key={slug}>
 						<Card
-							as="a"
-							href={`/post/${slug}`}
+							onClick={() => router.push(`/post/${slug}`)}
 							className="card-shadow"
 							isPressable
 						>
