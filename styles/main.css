@@ -343,7 +343,14 @@ code::selection {
     font-family: var(--nextui-fonts-mono);
 }
 
-.prose .date {
-    max-width: 3ch;
+.prose .date::after {
+    content: "";
+    width: 3ch;
     border-bottom: var(--border-main);
+    display: block;
+}
+
+.prose {
+    word-wrap: break-word;
+    hyphens: auto;
 }
