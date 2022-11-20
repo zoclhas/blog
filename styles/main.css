@@ -354,3 +354,25 @@ code::selection {
     word-wrap: break-word;
     hyphens: auto;
 }
+
+iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+
+    border: var(--border-main);
+    border-radius: var(--radius);
+
+    transition: box-shadow var(--transition-main);
+}
+
+iframe:hover {
+    box-shadow: var(--shadow-main);
+}
+
+blockquote {
+    background-color: var(--background);
+    opacity: 0.7;
+    color: var(--hover);
+
+    font-style: italic;
+}

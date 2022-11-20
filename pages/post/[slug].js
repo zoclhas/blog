@@ -15,7 +15,8 @@ const md = () =>
         .use(html5Media)
         .use(require("markdown-it-sup"))
         .use(require("markdown-it-sub"))
-        .use(require("markdown-it-kbd"));
+        .use(require("markdown-it-kbd"))
+        .use(require("markdown-it-iframe"), { allowfullscreen: true });
 
 export async function getStaticPaths() {
     const files = fs.readdirSync("posts");

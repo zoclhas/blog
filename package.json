@@ -20,6 +20,7 @@
         "markdown-it-attrs": "^4.1.4",
         "markdown-it-highlightjs": "^4.0.1",
         "markdown-it-html5-media": "^0.7.1",
+        "markdown-it-iframe": "^1.0.0",
         "markdown-it-kbd": "^2.2.2",
         "markdown-it-sub": "^1.0.0",
         "markdown-it-sup": "^1.0.0",
