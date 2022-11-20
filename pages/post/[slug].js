@@ -12,6 +12,7 @@ const md = () =>
             allowedAttributes: [],
         })
         .use(require("markdown-it-anchor").default)
+        .use(require('markdown-it-github-headings'))
         .use(html5Media)
         .use(require("markdown-it-sup"))
         .use(require("markdown-it-sub"))
@@ -44,7 +45,8 @@ export async function getStaticProps({ params: { slug } }) {
 
 export default function PostPage({ frontmatter, content }) {
     if (typeof document !== "undefined") {
-        var links = document.getElementsByTagName("a");
+        var links = document.getElementsByClassName("ext");
+        console.log(links)
         for (var i = 0, len = links.length; i < len; i++) {
             links[i].target = "_blank";
         }

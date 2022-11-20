@@ -244,8 +244,22 @@ header .home {
 .prose :where(h1, h2, h3, h4, h5, h6):not(:where([class~="not-prose"] *)) {
     color: var(--foreground);
     max-width: max-content;
-    border-bottom: var(--border-main);
     margin-bottom: 0.5rem;
+}
+
+.prose :where(h1, h2, h3, h4, h5, h6)::after {
+    content: "";
+    width: calc(100% + 10px);
+
+    border-bottom: var(--border-main);
+
+    display: block;
+    position: relative;
+    bottom: 3px;
+}
+
+.prose :where(h1:nth-child(1))::after {
+    border-bottom: none;
 }
 
 .prose {
@@ -375,4 +389,8 @@ blockquote {
     color: var(--hover);
 
     font-style: italic;
+}
+
+.anchor {
+    margin-right: 0.3rem;
 }
