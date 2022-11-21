@@ -12,8 +12,6 @@ tags:
 
 _Never thought I'd be writing so soon- but here I am :)_
 
-# Test
-
 &nbsp;
 
 This is going to be a short blog, but a vital one too. I think I've refined this well enough for the repo to be public (hopefully). \
