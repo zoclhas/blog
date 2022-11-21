@@ -7,6 +7,8 @@ html {
     --bg1: #fff4e4;
     --foreground: #0f0f0f;
     --hover: #121212;
+
+    --background-sel: rgba(255, 235, 204, 0.7);
 }
 
 .dark-theme {
@@ -14,6 +16,8 @@ html {
     --bg1: #181818;
     --foreground: #ffeacb;
     --hover: #fff4e4;
+
+    --background-sel: rgba(15, 15, 15, 0.9);
 }
 
 :root {
@@ -22,6 +26,7 @@ html {
     --border-main: var(--foreground) var(--b-width) solid;
     --shadow-main: 2px 2px var(--foreground);
     --transition-main: 150ms ease-in-out;
+    --code: #1e1e1e;
 }
 
 @font-face {
@@ -30,8 +35,8 @@ html {
 }
 
 ::selection {
-    background-color: var(--foreground);
-    color: var(--background);
+    background-color: var(--background-sel);
+    /* color: var(--background); */
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -296,10 +301,8 @@ header .home {
 }
 
 .prose :where(pre):not(:where([class~="not-prose"] *)) {
-    color: var(--background);
-    background: var(--foreground);
-
-    border: var(--background) var(--b-width) solid;
+    /* color: var(--background); */
+    background: var(--code);
     border-radius: var(--radius);
 }
 
@@ -311,22 +314,11 @@ header .home {
     color: var(--background);
     background: var(--foreground);
 
-    border: var(--background) var(--b-width) solid;
     border-radius: 4px;
 }
 
-pre code {
-    color: var(--background);
-    background: none;
-}
-
-code::selection {
-    background-color: var(--background);
-    color: var(--foreground);
-}
-
 .prose p {
-    line-height: 1.45rem;
+    line-height: calc(1.5 * 1rem);
     font-family: Verela;
 }
 
@@ -393,4 +385,20 @@ blockquote {
 
 .anchor {
     margin-right: 0.3rem;
+}
+
+.prose > h1::after {
+    display: none;
+}
+
+.hljs {
+    background: none !important;
+}
+
+pre code.hljs {
+    padding: 0 !important;
+}
+
+.anchor svg path {
+    fill: var(--foreground);
 }

@@ -2,6 +2,12 @@ import fs from "fs";
 import matter from "gray-matter";
 import Head from "next/head";
 
+import hljs from 'highlight.js'
+import "highlight.js/styles/vs2015.css"
+import { useEffect } from 'react'
+
+
+
 const markdownItAttrs = require("markdown-it-attrs");
 const { html5Media } = require("markdown-it-html5-media");
 const md = () =>
@@ -17,7 +23,7 @@ const md = () =>
         .use(require("markdown-it-sup"))
         .use(require("markdown-it-sub"))
         .use(require("markdown-it-kbd"))
-        .use(require("markdown-it-iframe"), { allowfullscreen: true });
+        .use(require("markdown-it-iframe"), { allowfullscreen: true })
 
 export async function getStaticPaths() {
     const files = fs.readdirSync("posts");
@@ -46,11 +52,16 @@ export async function getStaticProps({ params: { slug } }) {
 export default function PostPage({ frontmatter, content }) {
     if (typeof document !== "undefined") {
         var links = document.getElementsByClassName("ext");
-        console.log(links)
         for (var i = 0, len = links.length; i < len; i++) {
             links[i].target = "_blank";
         }
     }
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            hljs.highlightAll();
+        }
+    }, []);
 
     return (
         <div>

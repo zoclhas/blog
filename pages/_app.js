@@ -3,6 +3,7 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import Layout from "../components/Layout";
 import { Analytics } from "@vercel/analytics/react";
 
+// import "prismjs/themes/prism-tomorrow.css";
 import "../styles/main.css";
 
 const lightTheme = createTheme({
