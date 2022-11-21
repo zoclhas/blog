@@ -33,7 +33,8 @@ You can give the attribution by linking my website [blog.zochy.xyz](https://blog
 4. Start blogging!
     - Create a .md file in `./posts/`
     - Upload the images to `./public/images/`
-    - *Disclaimer:* The library (markdown-it) doesn't support raw HTML, so there's that limitation. And all links inside each blog posts will open it in a new tab.
+    - *Disclaimer:* The library (markdown-it) doesn't support raw HTML, so there's that limitation.
+    - For links to open in a new tab, add `{.ext}` after the link.
 
 ## Publishing the site
 
