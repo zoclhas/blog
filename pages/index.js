@@ -27,6 +27,22 @@ export async function getStaticProps() {
 
 export default function Home({ posts }) {
 	const router = useRouter();
+
+	for (let post of posts) {
+		// Split the date by the slash, resulting in an array of [ '03', '03', '2022' ], for example
+		let dateArr = post.frontmatter.date.split("-")
+		// Year, month, and day from the array. We subtract 1 from month, since months start counting from 0 in Javascript dates.
+		let year = parseFloat(dateArr[2]);
+		let month = parseFloat(dateArr[1]) - 1;
+		let day = parseFloat(dateArr[0])
+		// Pass in the different components as year, month, day to get the valid date
+		let articleDate = new Date(year, month, day);
+		// Update the object
+		post.date = articleDate;
+		//tysm https://hackernoon.com/how-to-sort-an-array-by-date-in-javascript
+	}
+	posts.sort((a, b) => b.date - a.date);
+
 	return (
 		<div>
 			<Head>
@@ -71,9 +87,6 @@ export default function Home({ posts }) {
 						</Card>
 					</Grid>
 				))}
-				<Grid sm={6} xs={12}></Grid>
-				<Grid sm={6} xs={12}></Grid>
-				<Grid sm={6} xs={12}></Grid>
 			</Grid.Container>
 		</div>
 	);
