@@ -78,7 +78,7 @@ And as for the css styling:
 
 There you have it! A wonderful parallax video with a gradient :D
 
-[text](../public/videos/Live.mp4)
+![](https://raw.githubusercontent.com/zoclhas/blog/main/public/videos/Live.mp4)
 
 And you can visit the [live full page here](https://zaura.net/SubtlePBR)- or checkout the codpen below.
 

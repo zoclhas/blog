@@ -402,3 +402,9 @@ pre code.hljs {
 .anchor svg path {
     fill: var(--foreground);
 }
+
+.prose .html5-video-player {
+    width: 100%;
+    aspect-ratio: auto;
+    border-radius: 14px;
+}
