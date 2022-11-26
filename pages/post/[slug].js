@@ -2,11 +2,9 @@ import fs from "fs";
 import matter from "gray-matter";
 import Head from "next/head";
 
-import hljs from 'highlight.js'
-import "highlight.js/styles/vs2015.css"
-import { useEffect } from 'react'
-
-
+import hljs from "highlight.js";
+import "highlight.js/styles/vs2015.css";
+import { useEffect } from "react";
 
 const markdownItAttrs = require("markdown-it-attrs");
 const { html5Media } = require("markdown-it-html5-media");
@@ -18,12 +16,12 @@ const md = () =>
             allowedAttributes: [],
         })
         .use(require("markdown-it-anchor").default)
-        .use(require('markdown-it-github-headings'))
+        .use(require("markdown-it-github-headings"))
         .use(html5Media)
         .use(require("markdown-it-sup"))
         .use(require("markdown-it-sub"))
         .use(require("markdown-it-kbd"))
-        .use(require("markdown-it-iframe"), { allowfullscreen: true })
+        .use(require("markdown-it-iframe"), { allowfullscreen: true });
 
 export async function getStaticPaths() {
     const files = fs.readdirSync("posts");
@@ -53,12 +51,12 @@ export default function PostPage({ frontmatter, content }) {
     if (typeof document !== "undefined") {
         var links = document.getElementsByClassName("ext");
         for (var i = 0, len = links.length; i < len; i++) {
-            links[i].target = "_blank";
+            links[i].setAttribute("target", "_blank");
         }
     }
 
     useEffect(() => {
-        if (typeof window !== 'undefined') {
+        if (typeof window !== "undefined") {
             hljs.highlightAll();
         }
     }, []);
