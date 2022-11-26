@@ -28,7 +28,7 @@ Now for the changes:
 
 I am finally making this open source!! _If it wasn't obvious from the title, image and the opening statement haha._ \
 You can find the repo [here](https://github.com/zoclhas/blog){.ext}- There may be a few things that are out of place, but I am working on those and you can contribute too! And if I like it, I'll merge it with main. That's all I've got to say I think. AND I will still be working on the site and making blog posts every now and then, so no I'm not abandoning it :). \
-Any thoughts or suggestions at all on this, you can contact me through the _multi_ ways I've listed on the [main site](https://zochy.xyz){.ext}. Or if you're lazy click [here for the mail](mailto:hi@zoclhas.com){.ext} or [here for the discord](https://discord.com/users/301347642682900481){.ext} or [here for the contact form](https://www.zoclhas.com/#contact){.ext}. \
+Any thoughts or suggestions at all on this, you can contact me through the _multi_ ways I've listed on the [main site](https://zochy.xyz). Or if you're lazy click [here for the mail](mailto:hi@zoclhas.com){.ext} or [here for the discord](https://discord.com/users/301347642682900481){.ext} or [here for the contact form](https://www.zoclhas.com/#contact){.ext}. \
 **_If you decide to go through the repo's commit- be warned.._**
 
 &nbsp;
