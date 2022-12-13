@@ -106,7 +106,7 @@ export default function PostPage({ frontmatter, content }) {
                     content={`https://blog.zochy.xyz/${frontmatter.socialImage}`}
                 />
                 <meta name="description" content={frontmatter.metaDesc} />
-                <meta name="theme-color" content="#ffeacb" />
+                <meta name="theme-color" content="#001c1a" />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <article className="prose prose-img:rounded-xl">

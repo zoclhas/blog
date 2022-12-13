@@ -82,7 +82,7 @@ export default function Home({ posts }) {
                         variety of topics, including code, insights, and maybe
                         even some art."
                 />
-                <meta name="theme-color" content="#ffeacb" />
+                <meta name="theme-color" content="#001c1a" />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <Spacer />
