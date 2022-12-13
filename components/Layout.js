@@ -9,6 +9,20 @@ export default function Layout({ children }) {
     return (
         <div className="container">
             <div className="wrapper-main">
+                <Card
+                    className="card-shadow"
+                    isPressable
+                    css={{ marginBottom: "1rem" }}
+                >
+                    <Card.Body>
+                        <span>
+                            Site has moved to{" "}
+                            <a href="https://zocs.space">zocs.space</a>- There
+                            will be no updates further on here. Thank you for
+                            everything!
+                        </span>
+                    </Card.Body>
+                </Card>
                 {router.pathname === "/" ? (
                     <header>
                         <Card className="header-title">
