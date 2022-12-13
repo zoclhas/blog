@@ -93,9 +93,9 @@ export default function Home({ posts }) {
                         <span style={{ textDecoration: "line-through" }}>
                             literally
                         </span>
-                        . I'll be sharing my thoughts, ideas, and creations on a
-                        variety of topics, including code, insights, and maybe
-                        even some art. Hope you enjoy checkout these out!
+                        . I&apos;ll be sharing my thoughts, ideas, and creations
+                        on a variety of topics, including code, insights, and
+                        maybe even some art. Hope you enjoy checkout these out!
                         <Spacer />
                         You can view the v1 of my blog
                         <UILink
