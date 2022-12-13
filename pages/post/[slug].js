@@ -95,7 +95,7 @@ export default function PostPage({ frontmatter, content }) {
                 <meta property="og:title" content={`${frontmatter.title}`} />
                 <meta
                     property="og:url"
-                    content={`https://blog.zochy.xyz/${frontmatter.url}`}
+                    content={`https://zocs.space/${frontmatter.url}`}
                 />
                 <meta
                     property="og:description"
@@ -103,7 +103,7 @@ export default function PostPage({ frontmatter, content }) {
                 />
                 <meta
                     property="og:image"
-                    content={`https://blog.zochy.xyz/${frontmatter.socialImage}`}
+                    content={`https://zocs.space/${frontmatter.socialImage}`}
                 />
                 <meta name="description" content={frontmatter.metaDesc} />
                 <meta name="theme-color" content="#001c1a" />
