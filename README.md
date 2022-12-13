@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Logo" src="https://blog.zochy.xyz/favicon-light.ico" width="100" />
+  <img alt="Logo" src="https://raw.githubusercontent.com/zoclhas/blog/main/public/favicon-dark.ico" width="100" />
 </div>
 <h1 align="center">
   Zoclhas | Blog
@@ -12,32 +12,49 @@ The official source code for my blog site.
 
 Yes you can fork this repo, and modify it for your personal site- **but you attribution is required.**
 
-You can give the attribution by linking my website [blog.zochy.xyz](https://blog.zochy.xyz/) or linking to this [GitHub Page](https://github.com/zoclhas/blog).
+You can give the attribution by linking my website (in the footer preferably) [zocs.space](https://zocs.space/) or linking to this [GitHub Page](https://github.com/zoclhas/blog).
 
 ## Installation
 
-1. Clone the repo
+1. Clone the repo-
 
-2. Install the dependencies
+```bash
+git clone https://github.com/zoclhas/blog.git
+```
 
-    ```sh
-    npm i
-    ```
+2. Install the dependencies and run-
 
-3. Start the development server
+Node:
 
-    ```sh
-    npm run dev
-    ```
+```bash
+npm install
+npm run dev
+```
 
-4. Start blogging!
-    - Create a .md file in `./posts/`
-    - Upload the images to `./public/images/`
-    - *Disclaimer:* The library (markdown-it) doesn't support raw HTML, so there's that limitation.
-    - For links to open in a new tab, add `{.ext}` after the link.
+Yarn:
 
-## Publishing the site
+```bash
+yarn install
+yarn run dev
+```
 
-The best way I recommend is hosting it using [Vercel](https://vercel.com/).
+3. Make your changes:
 
-&lt;3
+    - Urls
+    - Branding
+    - Links
+    - Colours
+    - Themes
+
+4. Creating posts:
+
+    - Add your post files in `/posts/<post-name>.md`.
+    - Copy the frontmatter template from this file's lines 1-10.
+    - **`markdown-it` doesn't support raw HTML code- :(**
+    - For links that are meant to be opened in a new tab, add `{.ext}` after the link.
+    - Check the installed plugins for `markdown-it` in the `/pages/post/[slug].js` file. Visit their npm-js or GitHub pages for usage.
+
+5. Push the changes.
+6. Host on [Vercel](https://vercel.com) or similar.
+
+💜

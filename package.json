@@ -1,37 +1,48 @@
 {
-    "name": "blog",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint"
-    },
-    "dependencies": {
-        "@blocker/markdown-it-mixed-html-fix": "^0.1.0",
-        "@nextui-org/react": "^1.0.0-beta.10",
-        "@vercel/analytics": "^0.1.4",
-        "eslint": "8.27.0",
-        "eslint-config-next": "13.0.3",
-        "gray-matter": "^4.0.3",
-        "highlight.js": "^11.6.0",
-        "markdown-it": "^13.0.1",
-        "markdown-it-anchor": "^8.6.5",
-        "markdown-it-attrs": "^4.1.4",
-        "markdown-it-github-headings": "^2.0.1",
-        "markdown-it-html5-media": "^0.7.1",
-        "markdown-it-iframe": "^1.0.0",
-        "markdown-it-kbd": "^2.2.2",
-        "markdown-it-sub": "^1.0.0",
-        "markdown-it-sup": "^1.0.0",
-        "next": "13.0.3",
-        "next-themes": "^0.2.1",
-        "react": "^18.2.0",
-        "react-dom": "18.2.0"
-    },
-    "devDependencies": {
-        "@tailwindcss/typography": "^0.5.8",
-        "tailwindcss": "^3.2.4"
-    }
+  "name": "blog-zochy",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-brands-svg-icons": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "eslint": "8.29.0",
+    "eslint-config-next": "13.0.6",
+    "highlightjs-copy": "^1.0.3",
+    "next": "13.0.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "^3.2.4"
+  },
+  "devDependencies": {
+    "@blocker/markdown-it-mixed-html-fix": "^0.1.0",
+    "@nextui-org/react": "^1.0.0-beta.10",
+    "@tailwindcss/typography": "^0.5.8",
+    "@vercel/analytics": "^0.1.6",
+    "gray-matter": "^4.0.3",
+    "highlight.js": "^11.7.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.5",
+    "markdown-it-attrs": "^4.1.6",
+    "markdown-it-github-headings": "^2.0.1",
+    "markdown-it-html5-media": "^0.7.1",
+    "markdown-it-iframe": "^1.0.0",
+    "markdown-it-kbd": "^2.2.2",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0",
+    "next-themes": "^0.2.1"
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "keywords": [],
+  "author": "Zoclhas <70476453+Zoclhas@users.noreply.github.com>",
+  "license": "ISC"
 }

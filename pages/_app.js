@@ -1,26 +1,29 @@
-import { createTheme, NextUIProvider, useTheme } from "@nextui-org/react";
+import { createTheme, NextUIProvider, Container } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
-import Layout from "../components/Layout";
-import { Analytics } from "@vercel/analytics/react";
 
-// import "prismjs/themes/prism-tomorrow.css";
+import Header from "../components/header/Header";
+import Footer from "../components/footer/Footer";
+
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
+
 import "../styles/main.css";
 
-const lightTheme = createTheme({
-    type: "light",
-    theme: {},
-});
-
-const darkTheme = createTheme({
-    type: "dark",
-    theme: {},
-});
-
 function MyApp({ Component, pageProps }) {
+    const lightTheme = createTheme({
+        type: "light",
+        theme: {},
+    });
+
+    const darkTheme = createTheme({
+        type: "dark",
+        theme: {},
+    });
 
     return (
         <NextThemesProvider
-            defaultTheme="light"
+            defaultTheme="dark"
             attribute="class"
             value={{
                 light: lightTheme.className,
@@ -28,10 +31,11 @@ function MyApp({ Component, pageProps }) {
             }}
         >
             <NextUIProvider>
-                <Layout>
+                <Header />
+                <Container as="main">
                     <Component {...pageProps} />
-                    <Analytics />
-                </Layout>
+                </Container>
+                <Footer />
             </NextUIProvider>
         </NextThemesProvider>
     );
