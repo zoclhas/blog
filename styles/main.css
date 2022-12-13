@@ -12,6 +12,11 @@
     background-color: var(--nextui-colors-blue200);
 }
 
+html,
+body {
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100vh;
     font-family: Poppins;
