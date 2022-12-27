@@ -82,7 +82,7 @@ export default function Home({ posts }) {
                         variety of topics, including code, insights, and maybe
                         even some art."
                 />
-                <meta name="theme-color" content="#001c1a" />
+                <meta name="theme-color" content="#11001a" />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <Spacer />
@@ -153,32 +153,36 @@ export default function Home({ posts }) {
             <div id="posts" gap={2}>
                 {posts.map(({ slug, frontmatter }, index) => (
                     <article key={slug}>
-                        <Link href={`/post/${slug}`} style={{ width: "100%" }}>
-                            <Card isPressable isHoverable variant="bordered">
-                                <Image
-                                    width={400}
-                                    height={300}
-                                    alt={frontmatter.title}
-                                    src={
-                                        isDark
-                                            ? `/images/post-${
-                                                  parseInt(index) + 1
-                                              }/post-${
-                                                  parseInt(index) + 1
-                                              }-dark.png`
-                                            : `/images/post-${
-                                                  parseInt(index) + 1
-                                              }/post-${
-                                                  parseInt(index) + 1
-                                              }-light.png`
-                                    }
-                                />
-                                <Card.Divider />
-                                <Card.Header>
-                                    <h4>{frontmatter.title}</h4>
-                                </Card.Header>
-                            </Card>
-                        </Link>
+                        <Card
+                            isPressable
+                            isHoverable
+                            variant="bordered"
+                            as={Link}
+                            href={`/post/${slug}`}
+                        >
+                            <Image
+                                width={400}
+                                height={300}
+                                alt={frontmatter.title}
+                                src={
+                                    isDark
+                                        ? `/images/post-${
+                                              parseInt(index) + 1
+                                          }/post-${
+                                              parseInt(index) + 1
+                                          }-dark.png`
+                                        : `/images/post-${
+                                              parseInt(index) + 1
+                                          }/post-${
+                                              parseInt(index) + 1
+                                          }-light.png`
+                                }
+                            />
+                            <Card.Divider />
+                            <Card.Header>
+                                <h4>{frontmatter.title}</h4>
+                            </Card.Header>
+                        </Card>
                     </article>
                 ))}
             </div>
