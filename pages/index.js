@@ -52,9 +52,7 @@ export default function Home({ posts }) {
     }
     posts.sort((a, b) => b.date - a.date);
 
-    const latestPost = posts[0];
-
-    console.log(latestPost.frontmatter.tags[0]);
+    const postsLenth = posts.length;
 
     const { isDark } = useTheme();
 
@@ -166,16 +164,16 @@ export default function Home({ posts }) {
                                 alt={frontmatter.title}
                                 src={
                                     isDark
-                                        ? `/images/post-${
-                                              parseInt(index) + 1
-                                          }/post-${
-                                              parseInt(index) + 1
-                                          }-dark.png`
-                                        : `/images/post-${
-                                              parseInt(index) + 1
-                                          }/post-${
-                                              parseInt(index) + 1
-                                          }-light.png`
+                                        ? `/images/post-${parseInt(
+                                              postsLenth - index
+                                          )}/post-${parseInt(
+                                              postsLenth - index
+                                          )}-dark.png`
+                                        : `/images/post-${parseInt(
+                                              postsLenth - index
+                                          )}/post-${parseInt(
+                                              postsLenth - index
+                                          )}-light.png`
                                 }
                             />
                             <Card.Divider />

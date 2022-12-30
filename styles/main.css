@@ -187,9 +187,18 @@ a .nextui-c-cBXzrI {
 
 .prose img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     border-radius: var(--nextui-radii-2xl);
+}
+
+.prose p > img {
+    display: block;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: var(--nextui-radii-2xl);
+}
+
+.prose div > p {
+    font-size: 18px;
 }
 
 .prose .info-card {
