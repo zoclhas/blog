@@ -186,15 +186,16 @@ a .nextui-c-cBXzrI {
 }
 
 .prose img {
-    display: block;
-    border-radius: var(--nextui-radii-2xl);
+    border-radius: var(--nextui-radii-lg);
 }
 
 .prose p > img {
     display: block;
+    margin: auto;
+
+    width: 100%;
     max-width: 1000px;
-    margin: 0 auto;
-    border-radius: var(--nextui-radii-2xl);
+    height: auto;
 }
 
 .prose div > p {

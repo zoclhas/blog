@@ -2,8 +2,8 @@
 title: "Remade zoclhas.com"
 metaTitle: "Remade zoclhas.com"
 metaDesc: "A small update on the remade zoclhas.com"
-socialImage: images/post-1/post-1-dark.png
-lightImage: images/post-1/post-1-light.png
+socialImage: images/post-2/post-2-dark.png
+lightImage: images/post-2/post-2-light.png
 date: "31-12-2022"
 tags:
 ---
@@ -28,7 +28,7 @@ Some notable changes I've introduced here are:
 -   Spotify current playing song. Displays the song if I'm listening on spotify; More of a fun thing hehe.
 -   The Work/Project column now uses takes information from an array. This makes it easier to write each new work/project.
     The work section also hides cards if more than 3, there's a show more/show less button for viewing more work. The typical array:
-       ```js
+    ```js
     export const works = [
         {
             coverImage: "zocs-space.png",
@@ -56,7 +56,7 @@ Some notable changes I've introduced here are:
                 "Amulet is a high-res stylized POM/PBR resourcepack for Minecraft. Generated procedurally using Substance Designer and compiled using PixelGraph.",
             github: null,
             isExternal: true,
-        }
+        },
     ];
     ```
 
