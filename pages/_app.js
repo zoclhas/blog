@@ -1,13 +1,16 @@
+import { Header } from "../components/header/Header";
+import { useRouter } from "next/router";
 import { Analytics } from "@vercel/analytics/react";
 
 import "../styles/main.css";
 
 export default function App({ Component, pageProps }) {
+    const { asPath } = useRouter();
+
     return (
         <>
-            <main className="container">
-                <Component {...pageProps} />
-            </main>
+            <Header pageLink={asPath !== "/" && asPath} />
+            <Component {...pageProps} />
             <Analytics />
         </>
     );

@@ -1,0 +1,38 @@
+.sidebar {
+    background: var(--background-2);
+    border-radius: var(--border-radius-lg);
+
+    height: 83.6vh;
+    padding: 1rem;
+
+    position: sticky;
+    top: 104px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        position: relative;
+        top: 0;
+    }
+}
+
+.sidebar img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+
+    border-radius: var(--border-radius-lg);
+}
+
+.sidebar ul {
+    margin: 0;
+    padding-left: 0;
+}
+
+.sidebar li {
+    list-style-type: none;
+}

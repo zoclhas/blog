@@ -1,0 +1,26 @@
+nav > .navbar {
+    background: var(--background-2);
+    height: 72px;
+    padding: 0 1rem 0 1rem;
+    border-radius: var(--border-radius-lg);
+
+    box-shadow: 0px 0px 16px rgb(var(--background-rgb), 0.8);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .s-xs {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    nav .h-xs {
+        display: none;
+    }
+
+    nav .s-xs {
+        display: block;
+    }
+}

@@ -1,9 +1,23 @@
+@tailwind base;
+h1 {
+    @apply text-4xl;
+}
+h2 {
+    @apply text-2xl;
+}
+h3 {
+    @apply text-lg;
+}
+@tailwind components;
+@tailwind utilities;
+
 :root {
     --background: #0d0d0d;
     --background-2: #131313;
     --background-3: #2c2c2c;
     --text: #fcf5e5;
     --text-hover: #ffedc2;
+    --text-sub: #7e7a71;
 
     --border-radius-md: 14px;
     --border-radius-lg: 20px;
@@ -63,10 +77,6 @@ h6 {
     margin: 0;
 }
 
-h1 {
-    font-size: 32pt;
-}
-
 body {
     font-family: Synonym;
     color: var(--text);
@@ -74,6 +84,23 @@ body {
     background: var(--background);
 
     margin: 0;
+}
+
+img {
+    pointer-events: none;
+    user-select: none;
+}
+
+nav {
+    z-index: 9999;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+    padding: 1rem;
+
+    position: sticky;
+    top: 0;
 }
 
 a {
@@ -116,4 +143,73 @@ button:hover {
 .container {
     max-width: 900px;
     margin: 0 auto;
+    padding: 0 1rem 0 1rem;
+}
+
+main.container.posts {
+    max-width: 1200px;
+
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    gap: 1rem;
+}
+
+@media (max-width: 800px) {
+    main.container.posts {
+        grid-template-columns: 1fr;
+        padding: 0 1rem 0 1rem;
+    }
+}
+
+.prose {
+    background: var(--background-2);
+    border-radius: var(--border-radius-lg);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.prose a :not(h1, h2, h3, h4, h5, h6) {
+    text-decoration: underline 0.05rem rgb(var(--text-rgb), 0.25);
+    transition: all 175ms;
+}
+
+.prose a:hover {
+    color: var(--text-hover);
+    text-decoration-color: rgb(var(--text-hover-rgb), 1);
+}
+
+.prose,
+.prose :where(h1, h2, h3, h4, h5, h6, strong, :not(pre, code)) {
+    color: var(--text);
+    transition: all 175ms;
+}
+
+.prose a:hover > :where(h1, h2, h3, h4, h5, h6) {
+    color: var(--text-hover);
+}
+
+.prose img {
+    border-radius: var(--border-radius-lg);
+}
+
+.prose pre {
+    background: transparent;
+    padding: 0;
+    border-radius: var(--border-radius-lg);
+}
+
+.prose pre,
+.prose code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: justify;
+}
+
+.toc > li.active {
+    list-style-type: disc;
+    margin-left: 1rem;
+}
+
+.toc > li.active > a {
+    font-weight: bold;
 }
