@@ -1,0 +1,119 @@
+:root {
+    --background: #0d0d0d;
+    --background-2: #131313;
+    --background-3: #2c2c2c;
+    --text: #fcf5e5;
+    --text-hover: #ffedc2;
+
+    --border-radius-md: 14px;
+    --border-radius-lg: 20px;
+
+    --background-rgb: 13, 13, 13;
+    --background-2-rgb: 19, 19, 19;
+    --background-3-rgb: 44, 44, 44;
+    --text-rgb: 252, 245, 229;
+    --text-hover-rgb: 255, 237, 194;
+    --border-rgb: 255, 255, 255;
+}
+
+@font-face {
+    font-family: Satoshi;
+    src: url("../fonts/Satoshi-Bold.ttf");
+}
+
+@font-face {
+    font-family: Synonym;
+    src: url("../fonts/Synonym-Regular.ttf");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: rgb(var(--text-rgb), 0.25);
+}
+
+*::-webkit-scrollbar {
+    width: 9px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--background-3);
+    border-radius: var(--border-radius-lg);
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Satoshi;
+    font-weight: normal;
+    margin: 0;
+}
+
+h1 {
+    font-size: 32pt;
+}
+
+body {
+    font-family: Synonym;
+    color: var(--text);
+
+    background: var(--background);
+
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: underline 0.05rem rgb(var(--text-rgb), 0.25);
+    transition: all 175ms;
+}
+
+a:hover {
+    color: var(--text-hover);
+    text-decoration-color: rgb(var(--text-hover-rgb), 1);
+}
+
+a.no-underline {
+    text-decoration-color: transparent;
+}
+
+button {
+    cursor: pointer;
+
+    background: var(--background-2);
+
+    font-family: Satoshi;
+    color: var(--text);
+    text-transform: uppercase;
+
+    padding: 1rem;
+
+    border-radius: var(--border-radius-lg);
+    border: none;
+
+    transition: all 150ms ease-in-out;
+}
+
+button:hover {
+    background: rgba(var(--background-2-rgb), 0.5);
+    color: var(--text-hover);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
