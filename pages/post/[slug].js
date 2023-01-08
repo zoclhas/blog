@@ -14,10 +14,15 @@ export default function Post({ post }) {
         }
     }, []);
 
+    headings.length = 0;
+
     const Heading2 = ({ children }) => {
         const idText = children.replace(/ /g, "-").toLowerCase();
 
-        headings.splice(0, 0, { title: children, link: idText });
+        headings.splice(0, 0, {
+            title: children,
+            link: idText,
+        });
 
         return (
             <a href={`#${idText}`} className="no-underline">
@@ -26,7 +31,7 @@ export default function Post({ post }) {
         );
     };
 
-    const components = { h2: Heading2 };
+    const components = { h2: Heading2, h1: "h2" };
 
     return (
         <main className="container posts">

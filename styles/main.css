@@ -166,6 +166,9 @@ main.container.posts {
     border-radius: var(--border-radius-lg);
     padding: 1rem;
     margin-bottom: 1rem;
+
+    /* height: 83.6vh;
+    overflow: scroll; */
 }
 
 .prose a :not(h1, h2, h3, h4, h5, h6) {
@@ -203,6 +206,10 @@ main.container.posts {
     white-space: pre-wrap;
     word-wrap: break-word;
     text-align: justify;
+}
+
+.prose img {
+    max-width: 100%;
 }
 
 .toc > li.active {

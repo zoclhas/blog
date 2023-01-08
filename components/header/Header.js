@@ -23,7 +23,7 @@ export const Header = ({ pageLink }) => {
                     <h2>Blog</h2>
                 </Link>
                 {pageLink && (
-                    <Link href={pageLink} onClick={() => copyDiscord(pageLink)}>
+                    <Link href={pageLink} onClick={() => copyDiscord(pageLink)} style={{textAlign: "end"}}>
                         {pageLink}
                     </Link>
                 )}

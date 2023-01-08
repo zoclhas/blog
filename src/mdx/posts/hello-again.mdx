@@ -1,68 +1,49 @@
 ---
 title: "Hello again!"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
-coverImage: "/images/posts/post-2-dark.png"
+description: "Definitely not me remaking the blog site for the 3rd time. But now matching theme with zoclhas.com!"
+coverImage: "/images/posts/post-3.png"
 date: "7-1-2023"
 ---
 
-Hello! This is gonna a bit of a short blog post, buttttt let's get into the redesign of [zoclhas.com](https://zoclhas.com). Don't worry- you can still view the previous of the site [here](https://v4.zoclhas.com).
+**_violoa_**- Welcome to the _brand new_ site for my blog! Well, it now matches the current theme of <a href="https://zoclhas.com" target="_blank">zoclhas.com</a>, so that's a yay!
 
-&nbsp;
-
-## Overview
-
-![zoclhas-com-landing](/images/post-2/overview.png)
-
-&nbsp;
-
-Well that's the landing page for the redesigned website. I've gone with using NextJS for the FE and I've gone against using any sort of UI frameworks here (don't get me wrong, I love them, but I want the site to be as light as possible).
-
-&nbsp;
-
-Some notable changes I've introduced here are:
+As usual, let's start with the infamous
 
 ## Notable Changes
 
--   Scrollspy for the small nav section. This is nothing too noticeable but adds subtle font weight and colour change.
--   Spotify current playing song. Displays the song if I'm listening on spotify; More of a fun thing hehe.
--   The Work/Project column now uses takes information from an array. This makes it easier to write each new work/project.
-    The work section also hides cards if more than 3, there's a show more/show less button for viewing more work. The typical array:
-    ```js
-    export const works = [
-        {
-            coverImage: "zocs-space.png",
-            title: "zocs.space",
-            link: "https://zocs.space",
-            description:
-                "Personal blogging site for all sorts of randomg thoughts, code, etc. Made using NextJS, NextUI and with `markdown-it` for blogs.",
-            github: "https://github.com/zoclhas/blog",
-            isExternal: true,
-        },
-        {
-            coverImage: "zaura-net.png",
-            title: "zaura.net",
-            link: "https://zaura.net",
-            description:
-                "Zaura is a professional studio creating high-quality resourepacks for Minecraft. It showcases pricing, downloads, updates, gallery. Made using NextJS & NextUI and Django serves as the backend.",
-            github: null,
-            isExternal: true,
-        },
-        {
-            coverImage: "Amulet.webp",
-            title: "Amulet",
-            link: "https://zaura.net/amulet",
-            description:
-                "Amulet is a high-res stylized POM/PBR resourcepack for Minecraft. Generated procedurally using Substance Designer and compiled using PixelGraph.",
-            github: null,
-            isExternal: true,
-        },
-    ];
+-   Changed from using `markdown-it` to `MDX`. Now won't be needing any extra plugins for basic md features, and can add custom React components.
+-   For a creating a post, navigate to `src/mdx/posts/` and create your `<post-name>.mdx` file.
+    -   Images need to be added in `public/images/posts/` folder.
+-   Still didn't implement copy code button :)
+
+## Setup
+
+1. Clone the repo:
+    ```bash
+    git clone https://github.com/zoclhas/blog.git
+    ```
+2. Install the dependencies:
+
+    ```bash
+    #yarn
+    yarn
+
+    #npm
+    npm i
     ```
 
-&nbsp;
+3. Run the dev server:
 
-## Closing Words
+    ```bash
+    #yarn
+    yarn dev
 
-Well that's all I've got for this post. Again I'm really like the new redisgn, and it got some pretty **amazing** scores on [pagespeed.web.dev](https://pagespeed.web.dev). You can visit the website [here](https://zoclhas) and checkout it's [GitHub repo](https://github.com/zoclhas/zoclhas-v5).
+    #npm
+    npm run dev
+    ```
 
-Have a great day! And Happy New Years!! 💜
+4. Make your changes
+
+## Hosting
+
+Best method to host NextJS apps are through <a href="https://vercel.com" target="_blank">Vercel</a>. Though you aren't limited to hosting it on Netifly, cPanel or your own server.

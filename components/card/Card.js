@@ -26,7 +26,10 @@ export const Card = ({
                         <h5>{postDate}</h5>
                     </div>
                     <div className={card["card-body"]}>
-                        <p>{`${postDescription}`.substring(0, 150) + "..."}</p>
+                        <p>
+                            {`${postDescription}`.substring(0, 150) +
+                                `${postDescription.length > 150 ? "..." : ""}`}
+                        </p>
                     </div>
                     <div className={card["card-footer"]}>
                         <Link

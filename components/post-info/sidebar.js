@@ -29,10 +29,8 @@ export const Sidebar = ({ postImage, postTitle, postDate, postHeadings }) => {
                 className="toc"
             >
                 {headingsList.map((heading, index) => (
-                    <li>
-                        <a href={`#${heading.link}`} key={heading.link + index}>
-                            {heading.title}
-                        </a>
+                    <li key={heading.link + index}>
+                        <a href={`#${heading.link}`}>{heading.title}</a>
                     </li>
                 ))}
             </Scrollspy>
