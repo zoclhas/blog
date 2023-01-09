@@ -1,5 +1,7 @@
 import { Sidebar } from "../../components/post-info/sidebar";
 import MDX from "@mdx-js/runtime";
+import Head from "next/head";
+import { useRouter } from "next/router";
 
 import { getPostBySlug, getAllPosts } from "../../src/api";
 
@@ -33,20 +35,40 @@ export default function Post({ post }) {
 
     const components = { h2: Heading2, h1: "h2" };
 
+    const router = useRouter();
+
     return (
-        <main className="container posts">
-            <Sidebar
-                postImage={post.coverImage}
-                postTitle={post.title}
-                postDate={post.date}
-            />
-            <article
-                className="prose dark:prose-invert prose-img:rounded-xl prose-slate max-w-none"
-                style={{ maxWidth: "864px" }}
-            >
-                <MDX components={components}>{post.content}</MDX>
-            </article>
-        </main>
+        <>
+            <Head>
+                <title>Blog • {post.title}</title>
+                <meta property="og:title" content={`${post.title}`} />
+                <meta
+                    property="og:url"
+                    content={`https://zocs.space${router.asPath}`}
+                />
+                <meta property="og:description" content={post.description} />
+                <meta
+                    property="og:image"
+                    content={`https://zocs.space${post.coverImage}`}
+                />
+                <meta name="description" content={post.description} />
+                <meta name="theme-color" content="#ffedc2" />
+                <meta name="twitter:card" content="summary_large_image" />
+            </Head>
+            <main className="container posts">
+                <Sidebar
+                    postImage={post.coverImage}
+                    postTitle={post.title}
+                    postDate={post.date}
+                />
+                <article
+                    className="prose dark:prose-invert prose-img:rounded-xl prose-slate max-w-none"
+                    style={{ maxWidth: "864px" }}
+                >
+                    <MDX components={components}>{post.content}</MDX>
+                </article>
+            </main>
+        </>
     );
 }
 

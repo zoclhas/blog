@@ -5,6 +5,7 @@
     height: 83.6vh;
     padding: 1rem;
 
+    float: left;
     position: sticky;
     top: 104px;
 
