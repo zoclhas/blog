@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { useState } from "react";
 
 import header from "./header.module.css";
 
 export const Header = ({ pageLink }) => {
-    const copyDiscord = (link) => {
+    const copyLink = () => {
         navigator.clipboard.writeText(`https://zocs.space${pageLink}`);
     };
     return (
@@ -23,7 +22,11 @@ export const Header = ({ pageLink }) => {
                     <h2>Blog</h2>
                 </Link>
                 {pageLink && (
-                    <Link href={pageLink} onClick={() => copyDiscord(pageLink)} style={{textAlign: "end"}}>
+                    <Link
+                        href={pageLink}
+                        onClick={copyLink}
+                        style={{ textAlign: "end" }}
+                    >
                         {pageLink}
                     </Link>
                 )}

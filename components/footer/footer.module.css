@@ -1,0 +1,13 @@
+footer.footer {
+    background: var(--background-2);
+    max-width: calc(900px - 2rem);
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
