@@ -2,6 +2,7 @@ import { Header } from "../components/header/Header";
 import { Footer } from "../components/footer/Footer";
 import { useRouter } from "next/router";
 import { Analytics } from "@vercel/analytics/react";
+import Head from "next/head";
 
 import "../styles/main.css";
 
@@ -11,6 +12,9 @@ export default function App({ Component, pageProps }) {
 
     return (
         <>
+            <Head>
+                <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+            </Head>
             <Header pageLink={router.asPath !== "/" && router.asPath} />
             <Component {...pageProps} />
             <Analytics />

@@ -63,8 +63,11 @@
 }
 
 .card .card-footer a > svg {
+    max-height: 20px;
+
     position: relative;
     left: 0;
+    top: 5px;
 
     transition: left 175ms;
 }
