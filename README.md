@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Logo" src="https://raw.githubusercontent.com/zoclhas/blog/main/public/favicon-dark.ico" width="100" />
+  <img alt="Logo" src="/public/favicon-dark.ico" width="100" />
 </div>
 <h1 align="center">
   Zoclhas | Blog
